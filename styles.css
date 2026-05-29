@@ -224,6 +224,8 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.06; letter-spacing: -0.025em; 
 /* Real screenshot: image fills the rounded box edge-to-edge, corners clip the image */
 .frame--shot { aspect-ratio: auto; background: none; border: none; margin: 0; line-height: 0; }
 .frame--shot img { width: 100%; height: auto; object-fit: contain; display: block; border-radius: inherit; }
+.frame--shot--crop { overflow: hidden; }
+.frame--shot--crop img { object-fit: cover; object-position: top; max-height: 26rem; width: 100%; height: auto; }
 .shot-cap { margin-top: .9rem; font-size: var(--step-small); color: var(--ink-faint); line-height: 1.4; }
 
 /* Auto-scrolling full-page preview — image is 1374 x 4799 (ratio 3.492) */
@@ -306,6 +308,10 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.06; letter-spacing: -0.025em; 
 .tag {
   font-size: 0.8rem; color: var(--ink-soft); padding: .3em .8em;
   border: 1px solid var(--hairline); border-radius: 980px; background: var(--paper);
+}
+.content-lanes {
+  display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center;
+  max-width: 52rem; margin-inline: auto;
 }
 
 /* =====================================================================
