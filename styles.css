@@ -214,6 +214,11 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.06; letter-spacing: -0.025em; 
 .frame img { width: 100%; height: 100%; object-fit: cover; }
 .frame--tall { aspect-ratio: 3 / 4; }
 .frame--wide { aspect-ratio: 16 / 10; }
+
+/* Real screenshot: show full image at its natural ratio, no crop */
+.frame--shot { aspect-ratio: auto; background: #fff; margin: 0; }
+.frame--shot img { width: 100%; height: auto; object-fit: contain; display: block; }
+.shot-cap { margin-top: .9rem; font-size: var(--step-small); color: var(--ink-faint); line-height: 1.4; }
 .frame__placeholder {
   position: absolute; inset: 0; display: flex; flex-direction: column;
   align-items: center; justify-content: center; gap: .6rem; text-align: center; padding: 2rem;
