@@ -40,6 +40,7 @@ ul { list-style: none; }
 
   --maxw: 1040px;
   --maxw-wide: 1280px;
+  --maxw-work: 1152px; /* maxw-wide − 10% */
   --gutter: clamp(1.25rem, 5vw, 3.5rem);
 
   --r: 18px;       /* card radius */
@@ -64,6 +65,7 @@ body {
 /* ---------- Layout helpers ---------- */
 .wrap { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: var(--gutter); }
 .wrap-wide { max-width: var(--maxw-wide); }
+.wrap-work { max-width: var(--maxw-work); }
 .section { padding-block: clamp(4.5rem, 11vw, 9rem); }
 .section--tight { padding-block: clamp(3rem, 7vw, 5.5rem); }
 .bg-alt { background: var(--paper-alt); }
@@ -190,6 +192,10 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.06; letter-spacing: -0.025em; 
   display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 5rem);
   align-items: center;
 }
+.wrap-work .feature {
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: start;
+}
 .feature + .feature { margin-top: clamp(4rem, 9vw, 7rem); }
 .feature--rev .feature__media { order: 2; }
 .feature__eyebrow { color: var(--accent); font-weight: 600; font-size: var(--step-small); margin-bottom: .9rem; }
@@ -228,14 +234,13 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.06; letter-spacing: -0.025em; 
 }
 .frame--scroller .scroll-shot {
   width: 100%; height: auto; display: block; position: absolute; top: 0; left: 0;
-  /* box shows ~21.5% of the image; scroll the remaining ~78.5% */
   animation: pageScroll 52s var(--ease) infinite;
   will-change: transform;
 }
 @keyframes pageScroll {
-  0%, 8%    { transform: translateY(0%); }            /* hold at top */
-  50%, 58%  { transform: translateY(-78.5%); }         /* scroll to bottom, hold */
-  100%      { transform: translateY(0%); }             /* glide back to top */
+  0%, 8%    { transform: translateY(0%); }
+  50%, 52%  { transform: translateY(var(--scroll-end, -52%)); }
+  100%      { transform: translateY(0%); }
 }
 /* soft top/bottom fade so content slides in/out gracefully */
 .frame--scroller::before, .frame--scroller::after {

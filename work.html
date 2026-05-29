@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Work — Simon McEvoy</title>
-<meta name="description" content="Selected work: AI agents, localization engineering, CMS platforms, and the multilingual training apps Simon McEvoy has built and led.">
+<meta name="description" content="Selected work: AI agents, content intake automation, localization engineering, CMS platforms, and the multilingual training apps Simon McEvoy has built and led.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -34,12 +34,12 @@
 
   <!-- CASE STUDIES -->
   <section class="section--tight">
-    <div class="wrap" style="display:grid; gap: clamp(4rem,9vw,7rem)">
+    <div class="wrap wrap-work" style="display:grid; gap: clamp(4rem,9vw,7rem)">
 
       <!-- 1. AI Agent -->
       <article class="feature reveal" id="ai-agent">
         <div class="feature__media">
-          <figure class="frame frame--scroller" aria-label="Auto-scrolling preview of the QuickBooks Industries page showing all 18 industry hubs">
+          <figure class="frame frame--scroller" style="--scroll-end: -52%" aria-label="Auto-scrolling preview of the QuickBooks Industries page showing all 18 industry hubs">
             <img class="scroll-shot" src="assets/work/quickbooks-industries-full.png" alt="Full QuickBooks Industries page — all 18 industry finance-guidance hubs" loading="lazy" width="1374" height="4799">
             <span class="scroller__glare" aria-hidden="true"></span>
           </figure>
@@ -57,8 +57,29 @@
         </div>
       </article>
 
-      <!-- 2. Localization API -->
-      <article class="feature feature--rev reveal" id="localization">
+      <!-- 2. Content intake form -->
+      <article class="feature feature--rev reveal" id="content-intake">
+        <div class="feature__media">
+          <figure class="frame frame--scroller" style="--scroll-end: -16%" aria-label="Auto-scrolling preview of the QuickBooks Content intake form">
+            <img class="scroll-shot" src="assets/work/content-intake-form-full.png" alt="QuickBooks Content intake form — conversational brief with content-type routing and Jira ticket creation" loading="lazy" width="576" height="1024">
+            <span class="scroller__glare" aria-hidden="true"></span>
+          </figure>
+          <figcaption class="shot-cap">Centralised content intake for QuickBooks — dynamic questions by content type, automated Jira routing. <span class="faint">(scrolling automatically)</span></figcaption>
+        </div>
+        <div class="feature__text">
+          <p class="feature__eyebrow">Intuit · 2026 · Content operations</p>
+          <h2 class="feature__title">One front door for every content request</h2>
+          <p class="feature__body">Requests arrived from every direction — incomplete briefs, endless email threads, and tickets landing on the wrong team. Content designers spent more time chasing context than creating.</p>
+          <ul class="feature__list">
+            <li><strong>What I did:</strong> built a web intake form that asks the right questions based on content type — article, video, PON, and more — so requestors arrive with a complete brief.</li>
+            <li><strong>How:</strong> conversational, step-by-step flow with conditional fields; on submit, it generates a Jira ticket and routes it to the correct global team by content type and region.</li>
+            <li><strong>Result:</strong> less back-and-forth between requestors and designers, faster triage, and more time freed for creators to actually create.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 3. Localization API -->
+      <article class="feature reveal" id="localization">
         <div class="feature__media">
           <div class="frame frame--wide">
             <div class="frame__placeholder">
@@ -80,8 +101,8 @@
         </div>
       </article>
 
-      <!-- 3. CMS migration -->
-      <article class="feature reveal" id="cms">
+      <!-- 4. CMS migration -->
+      <article class="feature feature--rev reveal" id="cms">
         <div class="feature__media">
           <div class="frame frame--wide">
             <div class="frame__placeholder">
@@ -103,8 +124,8 @@
         </div>
       </article>
 
-      <!-- 4. Apple training app -->
-      <article class="feature feature--rev reveal" id="apple">
+      <!-- 5. Apple training app -->
+      <article class="feature reveal" id="apple">
         <div class="feature__media">
           <div class="frame frame--wide">
             <div class="frame__placeholder">
