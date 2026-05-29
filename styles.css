@@ -229,7 +229,7 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.06; letter-spacing: -0.025em; 
 .frame--scroller .scroll-shot {
   width: 100%; height: auto; display: block; position: absolute; top: 0; left: 0;
   /* box shows ~21.5% of the image; scroll the remaining ~78.5% */
-  animation: pageScroll 26s var(--ease) infinite;
+  animation: pageScroll 52s var(--ease) infinite;
   will-change: transform;
 }
 @keyframes pageScroll {
