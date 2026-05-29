@@ -215,9 +215,9 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.06; letter-spacing: -0.025em; 
 .frame--tall { aspect-ratio: 3 / 4; }
 .frame--wide { aspect-ratio: 16 / 10; }
 
-/* Real screenshot: show full image at its natural ratio, no crop */
-.frame--shot { aspect-ratio: auto; background: #fff; margin: 0; }
-.frame--shot img { width: 100%; height: auto; object-fit: contain; display: block; }
+/* Real screenshot: image fills the rounded box edge-to-edge, corners clip the image */
+.frame--shot { aspect-ratio: auto; background: none; border: none; margin: 0; line-height: 0; }
+.frame--shot img { width: 100%; height: auto; object-fit: contain; display: block; border-radius: inherit; }
 .shot-cap { margin-top: .9rem; font-size: var(--step-small); color: var(--ink-faint); line-height: 1.4; }
 .frame__placeholder {
   position: absolute; inset: 0; display: flex; flex-direction: column;
