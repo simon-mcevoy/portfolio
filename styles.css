@@ -219,6 +219,40 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.06; letter-spacing: -0.025em; 
 .frame--shot { aspect-ratio: auto; background: none; border: none; margin: 0; line-height: 0; }
 .frame--shot img { width: 100%; height: auto; object-fit: contain; display: block; border-radius: inherit; }
 .shot-cap { margin-top: .9rem; font-size: var(--step-small); color: var(--ink-faint); line-height: 1.4; }
+
+/* Auto-scrolling full-page preview — image is 1374 x 4799 (ratio 3.492) */
+.frame--scroller {
+  aspect-ratio: 3 / 4;            /* portrait viewport window */
+  background: #fff; border: 1px solid var(--hairline); margin: 0;
+  position: relative; overflow: hidden; line-height: 0;
+}
+.frame--scroller .scroll-shot {
+  width: 100%; height: auto; display: block; position: absolute; top: 0; left: 0;
+  /* box shows ~21.5% of the image; scroll the remaining ~78.5% */
+  animation: pageScroll 26s var(--ease) infinite;
+  will-change: transform;
+}
+@keyframes pageScroll {
+  0%, 8%    { transform: translateY(0%); }            /* hold at top */
+  50%, 58%  { transform: translateY(-78.5%); }         /* scroll to bottom, hold */
+  100%      { transform: translateY(0%); }             /* glide back to top */
+}
+/* soft top/bottom fade so content slides in/out gracefully */
+.frame--scroller::before, .frame--scroller::after {
+  content: ""; position: absolute; left: 0; right: 0; height: 36px; z-index: 2; pointer-events: none;
+}
+.frame--scroller::before { top: 0; background: linear-gradient(rgba(255,255,255,.9), rgba(255,255,255,0)); }
+.frame--scroller::after  { bottom: 0; background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.9)); }
+/* gentle diagonal sheen, like glass over the screen */
+.scroller__glare {
+  position: absolute; inset: 0; z-index: 3; pointer-events: none;
+  background: linear-gradient(115deg, rgba(255,255,255,.10) 0%, rgba(255,255,255,0) 22%);
+}
+.frame--scroller:hover .scroll-shot { animation-play-state: paused; }
+
+@media (prefers-reduced-motion: reduce) {
+  .frame--scroller .scroll-shot { animation: none; }
+}
 .frame__placeholder {
   position: absolute; inset: 0; display: flex; flex-direction: column;
   align-items: center; justify-content: center; gap: .6rem; text-align: center; padding: 2rem;
